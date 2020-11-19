@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inspection</title>
+</head>
+<body>
+<form action="#" method="POST">
+    {% csrf_token %}
+    {% for i in order_detrail %}
+    <input type="text" name="air" value="{{ i.AirconditioningListname }}" style="display: none">    {{ i.AirconditioningListname }}{{ Insp.as_table }}
+        <br>
+    {% endfor %}
+    {{ Insp.as_table }}
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
