@@ -1,3 +1,9 @@
+'''
+Description: 
+Author: limaochao
+Date: 2020-11-20 19:59:41
+LastEditTime: 2020-11-20 20:01:22
+'''
 # -*- coding: utf-8 -*-
 """
 @Author : hejian
@@ -14,11 +20,11 @@ class Inspection_form(forms.ModelForm):
 
     class Meta:
         model = Tableheadmodels
-        exclude = ['Order_number','Personnel']
+        exclude = ['Order_number', 'Personnel']
 
 class Ordinaryequipment_form(forms.ModelForm):
 
     class Meta:
         model = Airconditioning
         fields = '__all__'
-        exclude = ['Airconditioning_list']
+        # exclude = ['Airconditioning_list']

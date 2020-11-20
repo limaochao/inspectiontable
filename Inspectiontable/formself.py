@@ -8,8 +8,10 @@
 @Version: v1.0
 """
 
-from django.forms import Form,ModelForm
+
+from django.forms import Form, ModelForm
 from Inspectiontable import models
+
 
 class TestForm(ModelForm):
     class Meta:
