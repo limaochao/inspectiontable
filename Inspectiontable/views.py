@@ -2,7 +2,7 @@
 Description: 
 Author: limaochao
 Date: 2020-11-20 19:19:34
-LastEditTime: 2020-11-20 20:11:12
+LastEditTime: 2020-11-20 20:59:20
 '''
 from django.shortcuts import render, reverse, redirect
 from .forms import Ordinaryequipment_form
@@ -22,20 +22,24 @@ def grantOrderNumber():
 def Inspection_table(request):
     if request.method == 'GET':
         order_detrail = AirconditioningList.objects.all()
-        Insp = Ordinaryequipment_form()
-        devicelist = AirconditioningList.objects.all()
+        insp = Ordinaryequipment_form()
         return render(request, 'Inspectiontable/index.html', locals())
     else:
         Insp = Ordinaryequipment_form(request.POST)
-        print(Insp)
-        print('-----------------')
-        print(request.POST)
+        # print(Insp)
+        
+        # print('-----------------')
+        print(request.POST.get("air"))
         if Insp.is_valid():
+            
             recove = Insp.save(commit=False)
+            recove.Airconditioning_list = AirconditioningList.objects.get(id=int(request.POST.get("air")))
             # recove.Airconditioning_list = 
+            # recove.save()
             recove.save()
 
         else:
+            pass
             # print(Insp)
-            print('Error')
+            # print('Error')
         return redirect(reverse('Inspection_table'))

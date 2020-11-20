@@ -2,7 +2,7 @@
 Description: 
 Author: limaochao
 Date: 2020-11-20 19:59:41
-LastEditTime: 2020-11-20 20:01:22
+LastEditTime: 2020-11-20 20:42:41
 '''
 # -*- coding: utf-8 -*-
 """
@@ -27,4 +27,4 @@ class Ordinaryequipment_form(forms.ModelForm):
     class Meta:
         model = Airconditioning
         fields = '__all__'
-        # exclude = ['Airconditioning_list']
+        exclude = ['Airconditioning_list']

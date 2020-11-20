@@ -8,8 +8,14 @@
 <form action="#" method="POST">
   {% csrf_token %}
   {% for i in order_detrail %}
-  <input type="text" name="air" value="{{ i.AirconditioningListname }}" style="display: none">    
-    {{ i.AirconditioningListname }}  {{ Insp.as_table }}<br>
+  <input type="text" name="air" value="{{ i.id }}" style="display: none">    
+    {{ i.AirconditioningListname }} 
+    温度：{{ insp.Airconditioning_temperature }}
+    开启状态：{{ insp.Open_state }}
+    异常噪声：{{ insp.Abnormal_noise }}
+    备注：{{ insp.Airconditioning_Remarks }}
+
+    <br>
   {% endfor %}
   {% comment %} {{ Insp.as_table }} {% endcomment %}
   <input type="submit" value="提交">
